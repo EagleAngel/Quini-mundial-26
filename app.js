@@ -79,7 +79,7 @@ container.appendChild(div);
 });
 
 updateChart();
-
+updateRanking();
 }
 
 function updateWinner(){
