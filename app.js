@@ -216,6 +216,9 @@ function updateRanking(){
         container.appendChild(div);
 
     });
+
+}
+
 async function testFirebase(){
 
     const snapshot =
@@ -238,8 +241,5 @@ async function testFirebase(){
     alert(
         "Consulta realizada. Revisa la consola."
     );
-}
-git add
-git commit -m "Firebase conectado"
-git push
+
 }
