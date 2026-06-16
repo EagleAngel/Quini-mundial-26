@@ -126,6 +126,7 @@ type:"bar",
 data:{
 labels,
 datasets:[
+  
 {
 label:
 "Equipos asignados",
@@ -137,5 +138,9 @@ data:values
 );
 
 }
+let eliminatedTeams =
+JSON.parse(
+localStorage.getItem("eliminatedTeams")
+) || [];
 
 render();
