@@ -8,7 +8,8 @@ import {
     onSnapshot,
     deleteDoc,
     doc,
-    setDoc
+    setDoc,
+    getDoc
 }
 from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
@@ -35,5 +36,6 @@ window.firestoreOnSnapshot = onSnapshot;
 window.firestoreDeleteDoc = deleteDoc;
 window.firestoreDoc = doc;
 window.firestoreSetDoc = setDoc;
+window.firestoreGetDoc = getDoc;
 
 console.log("Firebase conectado");
