@@ -29,3 +29,4 @@ window.firestoreAddDoc = addDoc;
 window.firestoreOnSnapshot = onSnapshot;
 
 console.log("Firebase conectado");
+db
