@@ -21,6 +21,57 @@
 <body>
 
 <h1>🏆 Quiniela Mundial 2026</h1>
+<div class="tabs">
+
+<button class="tab-btn active"
+onclick="showTab('resumen')">
+🏆 Resumen
+</button>
+
+<button class="tab-btn"
+onclick="showTab('rankingTab')">
+📊 Ranking
+</button>
+
+<button class="tab-btn"
+onclick="showTab('calendario')">
+⚽ Calendario
+</button>
+
+<button class="tab-btn"
+onclick="showTab('estadisticas')">
+📈 Estadísticas
+</button>
+
+</div>
+<div id="resumen" class="tab-content">
+
+<div class="dashboard">
+
+...
+
+</div>
+
+</div>
+<div id="rankingTab" class="tab-content">
+
+<h2>⭐ Ranking</h2>
+<div id="ranking"></div>
+
+</div>
+<div id="calendario" class="tab-content">
+
+<h2>⚽ Calendario Mundial 2026</h2>
+<div id="matchesContainer"></div>
+
+</div>
+<div id="estadisticas" class="tab-content">
+
+<h2>📈 Estadísticas</h2>
+
+<canvas id="probabilityChart"></canvas>
+
+</div>
 
 <div class="dashboard">
 
