@@ -5,7 +5,12 @@ import {
     collection,
     getDocs,
     addDoc,
-    onSnapshot
+    onSnapshot,
+    deleteDoc,
+    doc,
+    setDoc
+}
+from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js";
 
 const firebaseConfig = {
@@ -27,5 +32,8 @@ window.firestoreCollection = collection;
 window.firestoreGetDocs = getDocs;
 window.firestoreAddDoc = addDoc;
 window.firestoreOnSnapshot = onSnapshot;
+window.firestoreDeleteDoc = deleteDoc;
+window.firestoreDoc = doc;
+window.firestoreSetDoc = setDoc;
 
 console.log("Firebase conectado");
