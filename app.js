@@ -382,3 +382,16 @@ function initTabs() {
 }
 
 initTabs();
+function renderRanking(data) {
+    const container = document.getElementById("ranking");
+
+    container.innerHTML = data
+        .sort((a, b) => b.points - a.points)
+        .map((p, index) => `
+            <div class="ranking-item" style="animation-delay:${index * 50}ms">
+                <span class="pos">#${index + 1}</span>
+                <span class="name">${p.name}</span>
+                <span class="pts">${p.points} pts</span>
+            </div>
+        `).join("");
+}
