@@ -50,3 +50,9 @@ h1{
 .dead{
     color:#ef4444;
 }
+
+.eliminated{
+    background:#991b1b;
+    text-decoration:line-through;
+    opacity:.5;
+}
