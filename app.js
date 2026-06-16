@@ -133,7 +133,9 @@ function toggleTeam(team){
             t => t !== team
         );
     }else{
-        eliminatedTeams.push(team);
+    eliminatedTeams.push(team);
+
+    saveEliminatedTeam(team)
     }
 
     localStorage.setItem(
