@@ -311,3 +311,27 @@ async function saveEliminatedTeam(team){
     );
 
 }
+async function loadTournamentSettings(){
+
+    const snapshot =
+    await firestoreGetDoc(
+        firestoreDoc(
+            db,
+            "settings",
+            "tournament"
+        )
+    );
+
+    if(snapshot.exists()){
+
+        const data =
+        snapshot.data();
+
+        eliminatedTeams =
+        data.eliminatedTeams || [];
+
+       loadTournamentSettings();
+
+    }
+
+}
