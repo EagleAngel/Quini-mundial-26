@@ -9,6 +9,23 @@ p => p.teams
 )
 )
 ];
+const matches = [
+{
+    date:"11-Jun-2026",
+    home:"México",
+    away:"Canadá"
+},
+{
+    date:"12-Jun-2026",
+    home:"Brasil",
+    away:"Japón"
+},
+{
+    date:"13-Jun-2026",
+    home:"Francia",
+    away:"Alemania"
+}
+];
 const select =
 document.getElementById(
 "championSelect"
