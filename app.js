@@ -138,9 +138,7 @@ function toggleTeam(team){
     saveEliminatedTeam(team)
     }
 
-    localStorage.setItem(
-        "eliminatedTeams",
-        JSON.stringify(eliminatedTeams)
+saveTournamentSettings();
     );
 
     render();
