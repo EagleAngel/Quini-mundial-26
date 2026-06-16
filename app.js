@@ -1,3 +1,7 @@
+let eliminatedTeams =
+JSON.parse(
+localStorage.getItem("eliminatedTeams")
+) || [];
 const allTeams = [
 ...new Set(
 participantsData.flatMap(
@@ -138,9 +142,5 @@ data:values
 );
 
 }
-let eliminatedTeams =
-JSON.parse(
-localStorage.getItem("eliminatedTeams")
-) || [];
 
 render();
