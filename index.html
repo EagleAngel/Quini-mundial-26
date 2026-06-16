@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Quiniela Mundial 2026</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="data.js"></script>
+<script defer src="app.js"></script>
+
+</head>
+
+<body>
+
+<h1>🏆 Quiniela Mundial 2026</h1>
+
+<div class="dashboard">
+
+<div class="card">
+<h2>Participantes</h2>
+<div id="totalPlayers"></div>
+</div>
+
+<div class="card">
+<h2>Equipos Vivos</h2>
+<div id="aliveTeamsCount"></div>
+</div>
+
+<div class="card">
+<h2>Ganador</h2>
+<div id="winner"></div>
+</div>
+
+</div>
+
+<h2>Seleccionar Campeón</h2>
+
+<select id="championSelect">
+<option value="">Selecciona</option>
+</select>
+
+<h2>Probabilidades</h2>
+
+<canvas id="probabilityChart"></canvas>
+
+<h2>Participantes</h2>
+
+<div id="participantsContainer"></div>
+
+</body>
+
+</html>
