@@ -36,3 +36,17 @@ h1{
     background:#2563eb;
     border-radius:6px;
 }
+.ranking-item{
+    background:#1e293b;
+    padding:10px;
+    margin:5px 0;
+    border-radius:8px;
+}
+
+.alive{
+    color:#22c55e;
+}
+
+.dead{
+    color:#ef4444;
+}
