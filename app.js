@@ -168,3 +168,45 @@ data:values
 }
 
 render();
+function updateRanking(){
+
+    const ranking =
+    participantsData.map(player => {
+
+        const aliveTeams =
+        player.teams.filter(team =>
+            !eliminatedTeams.includes(team)
+        );
+
+        return {
+            name: player.name,
+            alive: aliveTeams.length
+        };
+
+    });
+
+    ranking.sort((a,b) =>
+        b.alive - a.alive
+    );
+
+    const container =
+    document.getElementById("ranking");
+
+    container.innerHTML = "";
+
+    ranking.forEach(player => {
+
+        const div =
+        document.createElement("div");
+
+        div.className =
+        "ranking-item";
+
+        div.innerHTML =
+        `${player.name} - ${player.alive} equipos vivos`;
+
+        container.appendChild(div);
+
+    });
+
+}
