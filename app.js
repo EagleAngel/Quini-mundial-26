@@ -335,3 +335,18 @@ async function loadTournamentSettings(){
     }
 
 }
+async function saveTournamentSettings(){
+
+    await firestoreSetDoc(
+        firestoreDoc(
+            db,
+            "settings",
+            "tournament"
+        ),
+        {
+            champion: select.value || "",
+            eliminatedTeams: eliminatedTeams
+        }
+    );
+
+}
