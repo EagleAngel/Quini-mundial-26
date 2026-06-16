@@ -1,7 +1,4 @@
-let eliminatedTeams =
-JSON.parse(
-localStorage.getItem("eliminatedTeams")
-) || [];
+let eliminatedTeams = [];
 const allTeams = [
 ...new Set(
 participantsData.flatMap(
@@ -68,19 +65,18 @@ function render(){
         let html =
         `<h3>${player.name}</h3>`;
 
-        player.teams.forEach(team => {
+player.teams.forEach(team => {
 
-            const eliminated =
-            eliminatedTeams.includes(team);
+    const eliminated =
+    eliminatedTeams.includes(team);
 
-            html += `
-            <span
-                class="team ${eliminated ? 'eliminated' : ''}"
-                onclick="toggleTeam('${team}')">
-                ${team}
-            </span>`;
+    html += `
+    <span
+        class="team ${eliminated ? 'eliminated' : ''}">
+        ${team}
+    </span>`;
 
-        });
+});
 
         div.innerHTML = html;
 
@@ -131,24 +127,6 @@ select.addEventListener(
 );
 
 let chart;
-function toggleTeam(team){
-
-    if(eliminatedTeams.includes(team)){
-        eliminatedTeams =
-        eliminatedTeams.filter(
-            t => t !== team
-        );
-    }else{
-    eliminatedTeams.push(team);
-
-    saveEliminatedTeam(team)
-    }
-
-saveTournamentSettings();
-
-    render();
-}
-
 function updateChart(){
 
 const labels =
@@ -191,7 +169,7 @@ data:values
 
 }
 
-render();
+listenTournamentSettings();
 function updateRanking(){
 
     const ranking =
@@ -297,23 +275,7 @@ function renderMatches(){
     });
 
 }
-async function saveEliminatedTeam(team){
 
-    await firestoreSetDoc(
-
-        firestoreDoc(
-            db,
-            "eliminatedTeams",
-            team
-        ),
-
-        {
-            name: team
-        }
-
-    );
-
-}
 async function loadTournamentSettings(){
 
     const snapshot =
@@ -350,6 +312,35 @@ async function saveTournamentSettings(){
             champion: select.value || "",
             eliminatedTeams: eliminatedTeams
         }
+    );
+
+}
+function listenTournamentSettings(){
+
+    firestoreOnSnapshot(
+
+        firestoreDoc(
+            db,
+            "settings",
+            "tournament"
+        ),
+
+        (snapshot) => {
+
+            if(snapshot.exists()){
+
+                const data =
+                snapshot.data();
+
+                eliminatedTeams =
+                data.eliminatedTeams || [];
+
+                render();
+
+            }
+
+        }
+
     );
 
 }
