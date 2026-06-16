@@ -109,6 +109,24 @@ updateWinner
 );
 
 let chart;
+function toggleTeam(team){
+
+    if(eliminatedTeams.includes(team)){
+        eliminatedTeams =
+        eliminatedTeams.filter(
+            t => t !== team
+        );
+    }else{
+        eliminatedTeams.push(team);
+    }
+
+    localStorage.setItem(
+        "eliminatedTeams",
+        JSON.stringify(eliminatedTeams)
+    );
+
+    render();
+}
 
 function updateChart(){
 
