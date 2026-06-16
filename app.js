@@ -292,3 +292,20 @@ function renderMatches(){
     });
 
 }
+async function saveEliminatedTeam(team){
+
+    await firestoreSetDoc(
+
+        firestoreDoc(
+            db,
+            "eliminatedTeams",
+            team
+        ),
+
+        {
+            name: team
+        }
+
+    );
+
+}
