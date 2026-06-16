@@ -395,3 +395,16 @@ function renderRanking(data) {
             </div>
         `).join("");
 }
+import { collection, onSnapshot } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { db } from "./firebase.js";
+
+function listenRanking() {
+    const ref = collection(db, "ranking");
+
+    onSnapshot(ref, (snapshot) => {
+        const data = snapshot.docs.map(doc => doc.data());
+        renderRanking(data);
+    });
+}
+
+listenRanking();
