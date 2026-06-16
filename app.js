@@ -91,6 +91,8 @@ function render(){
     updateChart();
 
     updateRanking();
+    
+    renderMatches();
 
 }
 
@@ -250,5 +252,43 @@ async function testFirebase(){
     alert(
         "Consulta realizada. Revisa la consola."
     );
+
+}
+function renderMatches(){
+
+    const container =
+    document.getElementById(
+        "matchesContainer"
+    );
+
+    container.innerHTML = "";
+
+    matches.forEach(match => {
+
+        const div =
+        document.createElement("div");
+
+        div.className =
+        "match-card";
+
+        div.innerHTML = `
+            <div class="match-date">
+                ${match.date}
+            </div>
+
+            <strong>
+                ${match.home}
+            </strong>
+
+            vs
+
+            <strong>
+                ${match.away}
+            </strong>
+        `;
+
+        container.appendChild(div);
+
+    });
 
 }
