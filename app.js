@@ -53,14 +53,15 @@ container.innerHTML="";
 
 participantsData.forEach(player=>{
 
-const div =
-document.createElement("div");
+const eliminated =
+    eliminatedTeams.includes(team);
 
-div.className=
-"participant";
-
-let html=
-`<h3>${player.name}</h3>`;
+    html += `
+    <span
+        class="team ${eliminated ? 'eliminated' : ''}"
+        onclick="toggleTeam('${team}')">
+        ${team}
+    </span>`;
 
 player.teams.forEach(team=>{
 
