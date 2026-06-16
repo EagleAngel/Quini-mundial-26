@@ -239,4 +239,7 @@ async function testFirebase(){
         "Consulta realizada. Revisa la consola."
     );
 }
+git add .
+git commit -m "Firebase conectado"
+git push
 }
