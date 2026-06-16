@@ -2,7 +2,6 @@ let eliminatedTeams =
 JSON.parse(
 localStorage.getItem("eliminatedTeams")
 ) || [];
-
 const allTeams = [
 ...new Set(
 participantsData.flatMap(
@@ -10,24 +9,17 @@ p => p.teams
 )
 )
 ];
-
 const select =
 document.getElementById(
 "championSelect"
 );
-
 allTeams.sort().forEach(team=>{
-
 const option =
 document.createElement("option");
-
 option.value=team;
 option.textContent=team;
-
 select.appendChild(option);
-
 });
-
 function render(){
 
     document.getElementById(
