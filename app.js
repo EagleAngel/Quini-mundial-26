@@ -145,7 +145,6 @@ function toggleTeam(team){
     }
 
 saveTournamentSettings();
-    );
 
     render();
 }
@@ -326,17 +325,17 @@ async function loadTournamentSettings(){
         )
     );
 
-    if(snapshot.exists()){
+if(snapshot.exists()){
 
-        const data =
-        snapshot.data();
+    const data =
+    snapshot.data();
 
-        eliminatedTeams =
-        data.eliminatedTeams || [];
+    eliminatedTeams =
+    data.eliminatedTeams || [];
 
-       loadTournamentSettings();
+    render();
 
-    }
+}
 
 }
 async function saveTournamentSettings(){
