@@ -34,52 +34,62 @@ select.appendChild(option);
 
 function render(){
 
-document.getElementById(
-"totalPlayers"
-).textContent =
-participantsData.length;
+function render(){
 
-document.getElementById(
-"aliveTeamsCount"
-).textContent =
-allTeams.length;
+    document.getElementById(
+        "totalPlayers"
+    ).textContent =
+    participantsData.length;
 
-const container =
-document.getElementById(
-"participantsContainer"
-);
+    document.getElementById(
+        "aliveTeamsCount"
+    ).textContent =
+    allTeams.length -
+    eliminatedTeams.length;
 
-container.innerHTML="";
+    const container =
+    document.getElementById(
+        "participantsContainer"
+    );
 
-participantsData.forEach(player=>{
+    container.innerHTML = "";
 
-const eliminated =
-    eliminatedTeams.includes(team);
+    participantsData.forEach(player => {
 
-    html += `
-    <span
-        class="team ${eliminated ? 'eliminated' : ''}"
-        onclick="toggleTeam('${team}')">
-        ${team}
-    </span>`;
+        const div =
+        document.createElement("div");
 
-player.teams.forEach(team=>{
+        div.className =
+        "participant";
 
-html +=
-`<span class="team">
-${team}
-</span>`;
+        let html =
+        `<h3>${player.name}</h3>`;
 
-});
+        player.teams.forEach(team => {
 
-div.innerHTML=html;
+            const eliminated =
+            eliminatedTeams.includes(team);
 
-container.appendChild(div);
+            html += `
+            <span
+                class="team ${eliminated ? 'eliminated' : ''}"
+                onclick="toggleTeam('${team}')">
+                ${team}
+            </span>`;
 
-});
+        });
 
-updateChart();
-updateRanking();
+        div.innerHTML = html;
+
+        container.appendChild(div);
+
+    });
+
+    updateChart();
+
+    updateRanking();
+
+}
 }
 
 function updateWinner(){
