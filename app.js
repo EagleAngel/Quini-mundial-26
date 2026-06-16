@@ -2,6 +2,7 @@ let eliminatedTeams =
 JSON.parse(
 localStorage.getItem("eliminatedTeams")
 ) || [];
+
 const allTeams = [
 ...new Set(
 participantsData.flatMap(
@@ -26,8 +27,6 @@ option.textContent=team;
 select.appendChild(option);
 
 });
-
-function render(){
 
 function render(){
 
@@ -85,7 +84,7 @@ function render(){
     updateRanking();
 
 }
-}
+
 
 function updateWinner(){
 
