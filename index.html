@@ -4,16 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Quiniela Mundial 2026</title>
+<title>🏆 Quiniela Mundial 2026</title>
 
 <link rel="stylesheet" href="style.css">
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script src="data.js"></script>
-
 <script type="module" src="firebase.js"></script>
-
 <script defer src="app.js"></script>
 
 </head>
@@ -21,6 +19,8 @@
 <body>
 
 <h1>🏆 Quiniela Mundial 2026</h1>
+
+<!-- PESTAÑAS -->
 <div class="tabs">
 
 <button class="tab-btn active"
@@ -44,34 +44,9 @@ onclick="showTab('estadisticas')">
 </button>
 
 </div>
-<div id="resumen" class="tab-content">
 
-<div class="dashboard">
-
-...
-
-</div>
-
-</div>
-<div id="rankingTab" class="tab-content">
-
-<h2>⭐ Ranking</h2>
-<div id="ranking"></div>
-
-</div>
-<div id="calendario" class="tab-content">
-
-<h2>⚽ Calendario Mundial 2026</h2>
-<div id="matchesContainer"></div>
-
-</div>
-<div id="estadisticas" class="tab-content">
-
-<h2>📈 Estadísticas</h2>
-
-<canvas id="probabilityChart"></canvas>
-
-</div>
+<!-- RESUMEN -->
+<div id="resumen" class="tab-content active">
 
 <div class="dashboard">
 
@@ -92,24 +67,43 @@ onclick="showTab('estadisticas')">
 
 </div>
 
-<h2>Seleccionar Campeón</h2>
-
-<select id="championSelect">
+<!-- Se deja oculto para compatibilidad con app.js -->
+<select id="championSelect" style="display:none;">
 <option value="">Selecciona</option>
 </select>
 
-<h2>Probabilidades</h2>
-
-<canvas id="probabilityChart"></canvas>
-
-<h2>Participantes</h2>
+<h2>👥 Participantes</h2>
 
 <div id="participantsContainer"></div>
+
+</div>
+
+<!-- RANKING -->
+<div id="rankingTab" class="tab-content">
+
 <h2>⭐ Ranking</h2>
+
 <div id="ranking"></div>
+
+</div>
+
+<!-- CALENDARIO -->
+<div id="calendario" class="tab-content">
+
 <h2>⚽ Calendario Mundial 2026</h2>
 
 <div id="matchesContainer"></div>
-<script type="module" src="firebase.js"></script>
+
+</div>
+
+<!-- ESTADÍSTICAS -->
+<div id="estadisticas" class="tab-content">
+
+<h2>📈 Estadísticas</h2>
+
+<canvas id="probabilityChart"></canvas>
+
+</div>
+
 </body>
 </html>
