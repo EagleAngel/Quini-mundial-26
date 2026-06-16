@@ -216,5 +216,27 @@ function updateRanking(){
         container.appendChild(div);
 
     });
+async function testFirebase(){
 
+    const snapshot =
+    await firestoreGetDocs(
+        firestoreCollection(
+            db,
+            "participants"
+        )
+    );
+
+    snapshot.forEach(doc => {
+
+        console.log(
+            doc.id,
+            doc.data()
+        );
+
+    });
+
+    alert(
+        "Consulta realizada. Revisa la consola."
+    );
+}
 }
