@@ -120,8 +120,14 @@ document.getElementById(
 }
 
 select.addEventListener(
-"change",
-updateWinner
+    "change",
+    () => {
+
+        updateWinner();
+
+        saveTournamentSettings();
+
+    }
 );
 
 let chart;
