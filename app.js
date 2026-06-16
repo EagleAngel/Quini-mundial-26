@@ -2,6 +2,11 @@ let eliminatedTeams =
 JSON.parse(
 localStorage.getItem("eliminatedTeams")
 ) || [];
+html += `
+<span class="team"
+onclick="toggleTeam('${team}')">
+${team}
+</span>`;
 const allTeams = [
 ...new Set(
 participantsData.flatMap(
