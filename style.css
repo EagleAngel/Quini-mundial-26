@@ -56,3 +56,14 @@ h1{
     text-decoration:line-through;
     opacity:.5;
 }
+.match-card{
+    background:#1e293b;
+    padding:12px;
+    margin:8px 0;
+    border-radius:10px;
+}
+
+.match-date{
+    font-size:.9rem;
+    opacity:.7;
+}
