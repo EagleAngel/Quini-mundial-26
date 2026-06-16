@@ -141,9 +141,13 @@ p=>p.name
 );
 
 const values =
-participantsData.map(
-p=>p.teams.length
-);
+participantsData.map(player => {
+
+    return player.teams.filter(team =>
+        !eliminatedTeams.includes(team)
+    ).length;
+
+});
 
 if(chart)
 chart.destroy();
